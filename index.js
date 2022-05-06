@@ -26,6 +26,11 @@ async function run() {
             res.send(products);
         });
 
+        app.post('/product', async (req, res) => {
+            const newService = req.body;
+            const result = await productCollection.insertOne(newService);
+            res.send(result);
+        })
 
         app.delete('/product/:id', async (req, res) => {
             const id = req.params.id;
