@@ -18,8 +18,7 @@ async function run() {
     try {
         await client.connect();
         const productCollection = client.db("bikeShop").collection("product")
-        // const orderCollection = client.db('bikeShop').collection('order')
-        // console.log(order)
+
 
         app.get('/product', async (req, res) => {
             const query = {};
@@ -77,7 +76,7 @@ async function run() {
         })
     }
     finally {
-        // await client.close();
+
     }
 }
 run().catch(console.dir);
