@@ -27,6 +27,7 @@ async function run() {
             res.send(products);
         });
 
+
         app.put('/product/:id', async (req, res) => {
             const id = req.params.id;
             const decreaseQuantity = req.body;
@@ -60,6 +61,7 @@ async function run() {
             res.send(result);
         })
 
+        // for my item page
         app.get('/product', async (req, res) => {
             const email = req.query.email;
             const query = { email: email };
